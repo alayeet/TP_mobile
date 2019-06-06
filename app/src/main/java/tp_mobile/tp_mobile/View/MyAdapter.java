@@ -1,4 +1,4 @@
-package tp_mobile.tp_mobile;
+package tp_mobile.tp_mobile.View;
 
 import java.util.List;
 
@@ -11,9 +11,18 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import com.squareup.picasso.Picasso;
 
+import tp_mobile.tp_mobile.Model.Cat;
+import tp_mobile.tp_mobile.R;
+
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     private List<Cat> values;
     private final Context context;
+    private final OnItemClickListener listener;
+
+
+    public interface OnItemClickListener {
+        void onItemClick(Cat item);
+    }
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -41,7 +50,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public MyAdapter(List<Cat> myDataset, Context context) {
+    public MyAdapter(List<Cat> myDataset, Context context, OnItemClickListener listener) {
+        this.listener = listener;
         this.context = context;
         values = myDataset;
     }
@@ -67,7 +77,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         holder.image.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                remove(position);
+                listener.onItemClick(currentCat);
             }
         });
         Picasso.with(context).load(currentCat.getUrl()).into(holder.image);

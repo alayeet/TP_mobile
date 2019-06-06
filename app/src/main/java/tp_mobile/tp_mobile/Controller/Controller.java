@@ -1,4 +1,4 @@
-package tp_mobile.tp_mobile;
+package tp_mobile.tp_mobile.Controller;
 
 import java.util.List;
 
@@ -10,6 +10,9 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+import tp_mobile.tp_mobile.Model.Cat;
+import tp_mobile.tp_mobile.Model.CatAPI;
+import tp_mobile.tp_mobile.View.MainActivity;
 
 public class Controller{
 
@@ -51,4 +54,9 @@ public class Controller{
         });
     }
 
+    public void OnItemClic(Cat item) {
+        Gson gson = new Gson();
+        String json = gson.toJson(item);
+        view.changeActivity(json);
+    }
 }

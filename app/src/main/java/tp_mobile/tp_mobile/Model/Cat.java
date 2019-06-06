@@ -1,4 +1,4 @@
-package tp_mobile.tp_mobile;
+package tp_mobile.tp_mobile.Model;
 
 public class Cat {
     private String url;

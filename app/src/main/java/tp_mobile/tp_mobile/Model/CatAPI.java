@@ -1,12 +1,12 @@
-package tp_mobile.tp_mobile;
+package tp_mobile.tp_mobile.Model;
 
 import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
+import tp_mobile.tp_mobile.Model.Cat;
 
 public interface CatAPI {
-
-    @GET("search?limit=10")
+    @GET("search?limit=5")
     Call<List<Cat>> getCatList();
 }
