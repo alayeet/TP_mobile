@@ -7,6 +7,6 @@ import retrofit2.http.GET;
 import tp_mobile.tp_mobile.Model.Cat;
 
 public interface CatAPI {
-    @GET("search?limit=5")
+    @GET("search?limit=10")
     Call<List<Cat>> getCatList();
 }
