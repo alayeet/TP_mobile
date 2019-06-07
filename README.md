@@ -25,5 +25,5 @@ A simple app to generate random cats pictures
   
   ### Secondary screen
   - A bigger view of the cute cat
-  <img src="README_images/secondaryScreen.PNG" alt="secondary screen">
   - Animation when opening/closing the secondary screen
+  <img src="README_images/secondaryScreen.PNG" alt="secondary screen">
